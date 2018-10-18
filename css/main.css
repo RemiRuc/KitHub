@@ -1,0 +1,270 @@
+body, html{
+    margin:0;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    background-color: #F1F1F1;
+}
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    position: relative;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    min-height: 100vh;
+
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+input[type="text"]{
+    font-family: 'Sawarabi Gothic', sans-serif;
+    color: rgb(88, 88, 88);
+}
+#searchbar{
+    border: none;
+    border-radius: 25px;
+    padding: 5px 10px;
+    padding-left: 33px;
+    transition: all 0.3s;
+}
+
+#searchbar:focus{
+    padding-left: 10px;
+}
+
+#searchbar.transparent{
+    background: rgba(137, 66, 168,0.2);
+}
+
+#searchbar:focus.transparent{
+    background: rgba(137, 66, 168,0.8);
+    color: white;
+}
+
+#searchbar.transparent::placeholder{
+    color: white;
+}
+
+header label{
+    position: relative;
+    left: 25px;
+    color: rgb(88, 88, 88);
+}
+
+
+
+a{
+    color: initial;
+    text-decoration: none;
+}
+
+h1, h2, p, ul{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    align-items: center;
+    padding: 5px 5%;
+    background: rgba(137, 66, 168,1);
+    transition: all 0.3s;
+}
+
+h1.transparent a{
+    color: rgba(137, 66, 168,1);
+}
+
+h1 a{
+    color: white;
+}
+h1:hover span{
+    animation: jello 1s;
+}
+
+@media screen and (max-width: 777px) {
+    h1 {
+        font-size: 1em;
+    }
+  }
+
+header span {
+    display: inline-block;
+}
+
+header.transparent{
+    background: rgba(137, 66, 168,0);
+}
+
+#introduction{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/img/pattern.png");
+    background-attachment: fixed;
+
+    animation-duration: 25s;
+    animation-name: slide;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.case{
+    background: white;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: #9d9d9d 0px 0px 10px 0px;
+    padding: 0px 20px 20px 20px;
+    margin: 0px 20px;
+    margin-top: 50px;
+    flex: 0 0 300px;
+
+    transition: all 0.3s;
+}
+@media screen and (max-width: 777px) {
+    .case {
+        flex: 1 1 300px;
+    }
+  }
+
+
+.case:hover{
+    box-shadow: #9d9d9d 0px 0px 25px 0px;
+}
+.case:hover .case-img{
+    transform: translateY(-30px) rotate(-10deg);
+}
+
+.case h2{
+    margin-top: -30px;
+}
+.case p{
+    margin: 15px 0px;
+}
+.case a{
+    position: relative;
+    color: #2d67f6;
+    transition: all 0.3s;
+}
+
+.case a::after{
+    content: '';
+    background: #2d67f6;
+    height: 2px;
+    position: absolute;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+.case a:hover::after{
+    width: 100%;
+    background: #1d53da;
+}
+.case a:hover{
+    color: #1d53da;
+}
+
+.case-img{
+    background-size: 100% 100%;
+    background-position: center center;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    transform: translateY(-30px) rotate(0deg);
+    transition: all 0.3s;
+}
+
+.tag-list{
+    display: flex;
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+.tag-list li{
+    position: relative;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.tag-list li::after{
+    content: '';
+    background: black;
+    height: 1px;
+    position: absolute;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+.tag-list li:hover::after{
+    width: 100%;
+    background: black;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    text-align: center;
+    color: white;
+    background: rgba(137, 66, 168,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer:hover .bg{
+    width: 100%;
+}
+
+footer .bg{
+    background: rgba(137, 66, 168,1);
+    height: 30px;
+    width: 0%;
+    position: absolute;
+    transition: all 1s;
+}
+
+footer p {
+    z-index: 1;
+}
+
+footer a{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    margin-left: 3px;
+}
+
+footer a span{
+    color: black;
+}
+
+@keyframes slide{
+    from {
+        background-position-x: 0px;
+        background-position-y: 0px;
+      }
+    
+      to {
+        background-position-x: 300px;
+        background-position-y: 300px;
+      }
+}
